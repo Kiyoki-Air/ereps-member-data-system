@@ -1,0 +1,43 @@
+# Dependencies
+node_modules/
+frontend/node_modules/
+backend/venv/
+.venv/
+env/
+ENV/
+
+# Python cache & artifacts
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Build artifacts
+dist/
+frontend/dist/
+build/
+*.egg-info/
+
+# Environment files & secrets
+.env
+.env.local
+.env.*.local
+*.log
+
+# SQLite WAL and temporary files
+*.db-shm
+*.db-wal
+*.db-journal
+
+# OS & Editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Large export artifacts (generated on demand via export engine)
+data/exports/*.xlsx
+data/exports/*.csv
