@@ -15,8 +15,11 @@ engine = create_engine(
 
 if settings.DATABASE_URL.startswith("sqlite"):
     with engine.connect() as conn:
-        conn.exec_driver_sql("PRAGMA journal_mode=WAL;")
-        conn.exec_driver_sql("PRAGMA synchronous=NORMAL;")
+        try:
+            conn.exec_driver_sql("PRAGMA journal_mode=WAL;")
+            conn.exec_driver_sql("PRAGMA synchronous=NORMAL;")
+        except Exception:
+            pass
 
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
 

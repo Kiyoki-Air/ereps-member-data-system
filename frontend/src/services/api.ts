@@ -62,7 +62,7 @@ export const api = {
       const envUrl = (import.meta as any).env?.VITE_API_URL;
       const isLocal = typeof window !== 'undefined' && (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1');
       const healthUrl = envUrl ? `${envUrl.replace(/\/+$/, '')}/health` : (isLocal ? 'http://127.0.0.1:8000/health' : '/health');
-      const res = await fetchWithTimeout(healthUrl, {}, 2000);
+      const res = await fetchWithTimeout(healthUrl, {}, 8000);
       isBackendConnected = res.ok;
       return res.ok;
     } catch {
